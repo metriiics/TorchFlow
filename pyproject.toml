@@ -1,5 +1,5 @@
 [project]
-name = "torch"
+name = "TorchFlow"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,7 +7,10 @@ authors = [
     { name = "metriiics", email = "metriics@yandex.ru" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.2",
+    "torch>=2.14.0",
+]
 
 [project.scripts]
 torch = "torch:main"
@@ -15,3 +18,12 @@ torch = "torch:main"
 [build-system]
 requires = ["uv_build>=0.12.8,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "jupyterlab>=4.6.3",
+]
